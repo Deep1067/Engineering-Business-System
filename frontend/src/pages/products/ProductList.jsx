@@ -5,7 +5,7 @@ import { getAllProducts, deleteProduct } from '../../services/productService';
 import { Loader2, Plus, Edit, Trash2, Eye, PackageOpen } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.PROD ? '' : 'http://localhost:5000';
 
 const ProductList = () => {
   const { role } = useAuth();

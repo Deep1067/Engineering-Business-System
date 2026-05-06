@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // Use VITE_API_URL environment variable to point to your external backend URL
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  // Use Vercel rewrite route '/api' in production, localhost in development
+  baseURL: import.meta.env.PROD ? '/api' : 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
