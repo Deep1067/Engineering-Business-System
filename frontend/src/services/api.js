@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-  // Pointing to the backend API running on port 5000
-  baseURL: 'http://localhost:5000/api',
+  // Use Vercel rewrite route '/api' in production, localhost in development
+  baseURL: import.meta.env.PROD ? '/api' : 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },

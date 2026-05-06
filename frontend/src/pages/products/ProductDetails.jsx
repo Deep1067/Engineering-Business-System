@@ -4,7 +4,7 @@ import { getProductById } from '../../services/productService';
 import { ChevronLeft, Loader2, PackageOpen, Layers, Coins, Scale, Hash } from 'lucide-react';
 import toast from 'react-hot-toast';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = import.meta.env.PROD ? '' : 'http://localhost:5000';
 
 const ProductDetails = () => {
   const { id } = useParams();
