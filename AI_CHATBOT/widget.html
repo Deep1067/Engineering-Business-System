@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- Required for the Admin Dashboard Charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Link to the widget's stylesheet and logic -->
+<link rel="stylesheet" href="widget.css">
+<script src="widget.js" defer></script>
+
+<div id="eng-chat-widget">
+  <button id="eng-chat-toggle">💬 Need Help?</button>
+
+  <div id="eng-chat-window" class="chat-hidden">
+    
+    <div id="eng-chat-header">
+      <strong id="eng-header-title">Steel & Eng Assistant</strong>
+      <div class="header-controls">
+        <button id="eng-admin-close" class="hidden" title="Back to Chat">🔙</button>
+        <button id="eng-chat-close">✖</button>
+      </div>
+    </div>
+
+    <!-- VIEW 1: THE NORMAL CHAT -->
+    <div id="eng-chat-view">
+      <div id="eng-chat-messages">
+        <div class="chat-message bot-message">
+          Hello! I can help you with material properties, our GST billing process, or general FAQs. What do you need?
+        </div>
+      </div>
+
+      <div id="eng-chat-input-area">
+        <input type="text" id="eng-chat-input" placeholder="Ask about materials or orders..." autocomplete="off">
+        <button id="eng-chat-send">Send</button>
+      </div>
+    </div>
+
+    <!-- VIEW 2: THE SECRET ADMIN DASHBOARD -->
+    <div id="eng-admin-view" class="hidden">
+      <div class="admin-stat-box">
+        <div style="font-size: 12px; color: #666;">Total Inquiries Today</div>
+        <div class="admin-stat-number">47</div>
+      </div>
+      
+      <div style="width: 100%; background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+        <h4 style="margin: 0 0 10px 0; text-align: center; font-size: 14px; color: #333;">Hot Materials Demanded</h4>
+        <canvas id="materialsChart" width="250" height="200"></canvas>
+      </div>
+    </div>
+    
+  </div>
+</div>
+</body>
+</html>
