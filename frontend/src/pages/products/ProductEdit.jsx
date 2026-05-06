@@ -5,7 +5,7 @@ import { Plus, Save, X, UploadCloud, ChevronLeft, Loader2, Trash2 } from 'lucide
 import toast from 'react-hot-toast';
 import Input from '../../components/Input';
 
-const API_URL = import.meta.env.PROD ? '' : 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 const ProductEdit = () => {
   const navigate = useNavigate();
